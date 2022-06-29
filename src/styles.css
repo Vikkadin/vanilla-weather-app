@@ -45,19 +45,8 @@ h2.current-temp {
   padding-left: 20px;
 }
 
-h3.day-temp {
-  font-weight: lighter;
-  margin: 0 auto;
-  padding: 0;
-}
-
-p.current-date {
-  font-weight: lighter;
-}
-
-p.description {
+.description::first-letter {
   text-transform: capitalize;
-  padding-left: 20px;
 }
 
 .main-temp {
@@ -66,7 +55,7 @@ p.description {
 
 .bottom-card {
   height: 80px;
-  width: 180px;
+  width: 10px;
 }
 
 .footer {
