@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/bf2850c7e5.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <video autoplay muted loop id="myVideo">
+      <source src="video/forest-rain.mp4" type="video/mp4" />
+    </video>
+
+    <div class="container body-wrap">
+      <div class="card-box">
+        <form class="input-group mb-3 search-tab" id="search-form">
+          <input
+            type="text"
+            class="form-control"
+            id="input-form"
+            placeholder="Type city name..."
+            aria-label="Recipient's username"
+            aria-describedby="button-addon2"
+          />
+          <button
+            class="btn btn-outline-light search-button"
+            type="submit"
+            id="button-addon2"
+          >
+            Search
+          </button>
+        </form>
+      
+   
+        <div class="row">
+            <div class="col-6 main-temp">
+              <img src="" alt="Clear" class="icon" id="main-icon">
+            <h2 class="current-temp" id="current-tempersture"></h2><span class="main-celcius">°C</span>
+             </div>
+            <div class="col-6 main-data">
+              <h1 class="main-city" id="current-city"></h1>
+            
+            </div>
+        </div>
+            <div class="row">
+                    <div class="col-6 forecast-info">
+                         Humidity: <span id="humidity"></span> %
+                         <br/>
+                         Wind: <span id="wind"></span> km/h
+                   </div> 
+                   <div class="col-6">
+                   <div class="current-date" id="day-time">Friday 15:34</div>
+                   <div class="description" id ="weather-description">Rain</div>
+                   </div>
+                   </div>
+                </div>
+      
+        </div>
+</div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
