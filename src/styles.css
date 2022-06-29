@@ -85,31 +85,12 @@ a.decoration {
   font-style: oblique;
   font-weight: lighter;
   color: #fff;
-  padding-top: 8px;
+  padding-top: 24px;
 }
 
-.footer-icons {
-  text-align: center;
-  font-size: 24px;
-}
-
-.github-icon:hover,
-.lnk-icon:hover {
-  color: gray;
-  cursor: pointer;
-}
-.github-link,
-.lnk-link {
-  text-decoration: none;
-  color: #fff;
-}
 .github-link {
   position: relative;
-  right: 20px;
-}
-.lnk-link {
-  position: relative;
-  left: 20px;
+  color: #fff;
 }
 
 #myVideo {
