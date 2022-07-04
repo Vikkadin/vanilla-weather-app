@@ -32,12 +32,13 @@ h1.main-city {
   font-weight: 800;
   font-size: 42px;
   flex: none;
+  padding-top: 24px;
   order: 0;
   flex-grow: 0;
 }
 
 h2.current-temp {
-  font-size: 46px;
+  font-size: 64px;
   font-weight: 400;
   margin-top: 10px;
 }
@@ -51,8 +52,8 @@ a.decoration {
 }
 
 .main-icon {
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
 }
 
 .main-temp {
@@ -80,8 +81,12 @@ a.decoration {
   color: #fff;
 }
 
+.weather-forecast-day {
+  font-size: 18px;
+}
+
 .weather-forecast-date {
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .forecast-icon {

@@ -20,6 +20,11 @@
   <div class="container body-wrap">
 
     <div class="card-box">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="main-city" id="current-city"></h1>
+        </div>
+      </div>
       <form class="input-group mb-3 search-tab" id="search-form">
         <input type="search" class="form-control" id="input-form" placeholder="Type city name..." autocomplete="off" />
         <button class="btn btn-outline-light search-button" type="submit" value="search" id="btn-search">
@@ -30,42 +35,20 @@
       <div class="row">
         <div class="col-6 main-temp">
           <img src="" alt="weather-description-icon" class="main-icon" id="icon">
-          <h2 class="current-temp" id="current-tempersture"></h2><span class="units"><a href="#"
+          <h2 class="current-temp" id="current-temperature"></h2><span class="units"><a href="#"
               class="active decoration" id="celsius">°C</a> | <a href="#" class="decoration"
               id="fahrenheits">°F</a></span>
         </div>
-        <div class="col-6 city">
-          <h1 class="main-city" id="current-city"></h1>
-        </div>
-      </div>
-      <div class="row">
         <div class="col-6 forecast-info">
+          <div class="current-date" id="date"></div>
+          <div class="description" id="weather-description"></div>
           Humidity: <span id="humidity"></span> %
           <br />
           Wind: <span id="wind"></span> km/h
         </div>
-        <div class="col-6">
-          <div class="current-date" id="date"></div>
-          <div class="description" id="weather-description"></div>
-        </div>
       </div>
 
-      <div class="weather-forecast">
-        <div class="row">
-          <div class="col-2">
-            <div class="weather-forecast-date">Thu</div>
-            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" class="forecast-icon">
-            <div class="weather-forecast-temp">
-              <span class="weather-forecast-temp-max">
-                29°
-              </span>
-              <span class="weather-forecast-temp-min">
-                21°
-              </span>
-            </div>
-
-          </div>
-        </div>
+      <div class="weather-forecast" id="forecast">
       </div>
     </div>
 
