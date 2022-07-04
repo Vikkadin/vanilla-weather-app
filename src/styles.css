@@ -74,6 +74,25 @@ a.decoration {
   align-items: flex-end;
 }
 
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+}
+
+.forecast-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.weather-forecast-temp-min {
+  opacity: 0.5;
+}
+
 .bottom-card {
   height: 80px;
   width: 10px;

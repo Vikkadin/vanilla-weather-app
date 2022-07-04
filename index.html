@@ -1,76 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather App</title>
-    <link rel="stylesheet" href="src/styles.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  </head>
 
-  <body>
-    <video autoplay muted loop id="myVideo">
-      <source src="video/forest-rain.mp4" type="video/mp4" />
-    </video>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="src/styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
 
-    <div class="container body-wrap">
-      <div class="card-box">
-            <form class="input-group mb-3 search-tab" id="search-form">
-          <input
-            type="search"
-            class="form-control"
-            id="input-form"
-            placeholder="Type city name..."
-            autocomplete="off"
-          />
-          <button
-            class="btn btn-outline-light search-button"
-            type="submit"
-            value="search"
-            id="btn-search"
-          >
-            Search
-          </button>
-        </form>
-      
-   
+<body>
+  <video autoplay muted loop id="myVideo">
+    <source src="video/forest-rain.mp4" type="video/mp4" />
+  </video>
+
+  <div class="container body-wrap">
+
+    <div class="card-box">
+      <form class="input-group mb-3 search-tab" id="search-form">
+        <input type="search" class="form-control" id="input-form" placeholder="Type city name..." autocomplete="off" />
+        <button class="btn btn-outline-light search-button" type="submit" value="search" id="btn-search">
+          Search
+        </button>
+      </form>
+
+      <div class="row">
+        <div class="col-6 main-temp">
+          <img src="" alt="weather-description-icon" class="main-icon" id="icon">
+          <h2 class="current-temp" id="current-tempersture"></h2><span class="units"><a href="#"
+              class="active decoration" id="celsius">°C</a> | <a href="#" class="decoration"
+              id="fahrenheits">°F</a></span>
+        </div>
+        <div class="col-6 city">
+          <h1 class="main-city" id="current-city"></h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 forecast-info">
+          Humidity: <span id="humidity"></span> %
+          <br />
+          Wind: <span id="wind"></span> km/h
+        </div>
+        <div class="col-6">
+          <div class="current-date" id="date"></div>
+          <div class="description" id="weather-description"></div>
+        </div>
+      </div>
+
+      <div class="weather-forecast">
         <div class="row">
-            <div class="col-6 main-temp">
-              <img src="" alt="weather-description-icon" class="main-icon" id="icon">
-            <h2 class="current-temp" id="current-tempersture"></h2><span class="units"><a href="#" class="active decoration" id="celsius">°C</a> | <a href="#" class="decoration" id="fahrenheits">°F</a></span>
-             </div>
-            <div class="col-6 city">
-              <h1 class="main-city" id="current-city"></h1>
+          <div class="col-2">
+            <div class="weather-forecast-date">Thu</div>
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" class="forecast-icon">
+            <div class="weather-forecast-temp">
+              <span class="weather-forecast-temp-max">
+                29°
+              </span>
+              <span class="weather-forecast-temp-min">
+                21°
+              </span>
             </div>
+
+          </div>
         </div>
-            <div class="row">
-                    <div class="col-6 forecast-info">
-                         Humidity: <span id="humidity"></span> %
-                         <br/>
-                         Wind: <span id="wind"></span> km/h
-                   </div> 
-                   <div class="col-6">
-                   <div class="current-date" id="date"></div>
-                   <div class="description" id ="weather-description"></div>
-                   </div>
-                   </div>
-                </div>
-      
-        </div>
-</div>
+      </div>
     </div>
 
-     <div class="card-box bottom-card">
-          <div class="footer">  
-            <a href="https://github.com/Vikkadin/vanilla-weather-app" class="github-link">Open-source code</a> by Vika Kelii
+  </div>
+
+
+
+  <div class="card-box bottom-card">
+    <div class="footer">
+      <a href="https://github.com/Vikkadin/vanilla-weather-app" class="github-link">Open-source code</a> by Vika Kelii
     </div>
     <script src="src/index.js"></script>
-  </body>
+</body>
+
 </html>
