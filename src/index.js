@@ -164,4 +164,21 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-search("London");
+function showPosition(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+
+  let apiKey = "8ff5d1a1376b46b7fe89092d7988204d";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function locateGadget() {
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+let currentLocation = document.querySelector("#current-location");
+currentLocation.addEventListener("click", locateGadget);
+
+search("Kyiv");

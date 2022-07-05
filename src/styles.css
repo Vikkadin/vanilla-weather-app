@@ -35,12 +35,13 @@ h1.main-city {
   padding-top: 24px;
   order: 0;
   flex-grow: 0;
+  margin-bottom: 0;
 }
 
 h2.current-temp {
-  font-size: 64px;
+  font-size: 74px;
   font-weight: 400;
-  margin-top: 10px;
+  line-height: 1;
 }
 
 a.decoration {
@@ -51,6 +52,11 @@ a.decoration {
   text-transform: capitalize;
 }
 
+.main-date {
+  display: flex;
+  flex-direction: column;
+}
+
 .main-icon {
   width: 100px;
   height: 100px;
@@ -58,21 +64,34 @@ a.decoration {
 
 .main-temp {
   display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
-.main-temp .active {
+.units {
+  text-align: end;
+  font-size: 18px;
+}
+
+.units .active {
   color: #fff;
   text-decoration: none;
   cursor: default;
 }
 
-.main-temp .active:hover {
+.units .active:hover {
   text-decoration: none;
 }
 
 .city {
   display: flex;
   align-items: flex-end;
+}
+
+.forecast-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .weather-forecast {

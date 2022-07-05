@@ -25,32 +25,44 @@
           <h1 class="main-city" id="current-city"></h1>
         </div>
       </div>
+
       <form class="input-group mb-3 search-tab" id="search-form">
-        <input type="search" class="form-control" id="input-form" placeholder="Type city name..." autocomplete="off" />
-        <button class="btn btn-outline-light search-button" type="submit" value="search" id="btn-search">
+        <input type="search" class="form-control" id="input-form" placeholder="Type city name..." autocomplete="off">
+        <button class="btn btn-outline-light search-button" type="submit" value="search" id="start-button">
           Search
+        </button>
+        <button class="btn btn-outline-light location-button" type="button" id="current-location">
+          Current location
         </button>
       </form>
 
       <div class="row">
-        <div class="col-6 main-temp">
-          <img src="" alt="weather-description-icon" class="main-icon" id="icon">
-          <h2 class="current-temp" id="current-temperature"></h2><span class="units"><a href="#"
-              class="active decoration" id="celsius">°C</a> | <a href="#" class="decoration"
-              id="fahrenheits">°F</a></span>
-        </div>
-        <div class="col-6 forecast-info">
+        <div class="col-3 main-date">
           <div class="current-date" id="date"></div>
+          <img src="" alt="weather-description-icon" class="main-icon" id="icon">
+        </div>
+
+        <div class="col-3 main-temp">
+          <div class="units"><a href="#" class="active decoration" id="celsius">°C</a> | <a href="#" class="decoration"
+              id="fahrenheits">°F</a></div>
+          <h2 class="current-temp" id="current-temperature"></h2>
+        </div>
+
+        <div class="col-6 forecast-info">
           <div class="description" id="weather-description"></div>
-          Humidity: <span id="humidity"></span> %
-          <br />
-          Wind: <span id="wind"></span> km/h
+          <div>Humidity: <span id="humidity"></span> %</div>
+          <div>Wind: <span id="wind"></span> km/h</div>
+          <div class="form-check form-switch switcher">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Hourly</label>
+          </div>
         </div>
       </div>
 
       <div class="weather-forecast" id="forecast">
       </div>
     </div>
+  </div>
 
   </div>
 
