@@ -101,16 +101,17 @@ function displayTemperature(response) {
   let temperatureElement = document.querySelector("#current-temperature");
   let cityElement = document.querySelector("#current-city");
   let descriptionElement = document.querySelector("#weather-description");
+  let pressureElement = document.querySelector("#pressure");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
-
   celsiusTemperature = response.data.main.temp;
 
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
+  pressureElement.innerHTML = response.data.main.pressure;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt + 1000);
@@ -119,6 +120,8 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  changeVideo(response.data.weather[0].main);
 
   getForecast(response.data.coord);
 }
@@ -133,6 +136,31 @@ function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#input-form");
   search(cityInputElement.value);
+}
+
+function changeVideo(backgroundVideo) {
+  let video = document.querySelector("#my-video");
+  if (backgroundVideo == "Clear") {
+    video.src = "video/clear-sky.mp4";
+  }
+  if (backgroundVideo == "Clouds") {
+    video.src = "video/clouds.mp4";
+  }
+  if (backgroundVideo == "Mist") {
+    video.src = "video/mist.mp4";
+  }
+  if (backgroundVideo == "Rain") {
+    video.src = "video/rain.mp4";
+  }
+  if (backgroundVideo == "Snow") {
+    video.src = "video/snow.mp4";
+  }
+  if (backgroundVideo == "Thunderstorm") {
+    video.src = "video/thunderstorm.mp4";
+  }
+  if (backgroundVideo == "Drizzle") {
+    video.src = "video/drizzle.mp4";
+  }
 }
 
 function displayFahrenheitTemperature(event) {

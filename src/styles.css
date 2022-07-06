@@ -1,3 +1,11 @@
+html,
+body {
+  height: 100%;
+}
+.background-body {
+  background: linear-gradient(to top, #3b41c5 0%, #a981bb 49%, #ffc8a9 100%);
+}
+
 .body-wrap {
   font-family: "SF Pro Display";
   padding-top: 100px;
@@ -53,19 +61,26 @@ a.decoration {
 }
 
 .main-date {
-  display: flex;
-  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
 
 .main-icon {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
 }
 
 .main-temp {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  padding-top: 20px;
+}
+
+.main-forecast-info {
+  padding-top: 42px;
 }
 
 .units {
@@ -91,7 +106,12 @@ a.decoration {
 .forecast-info {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+}
+
+.hourly-btn {
+  align-self: flex-end;
+  width: 74px;
+  height: 38px;
 }
 
 .weather-forecast {
@@ -101,7 +121,7 @@ a.decoration {
 }
 
 .weather-forecast-day {
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .weather-forecast-date {
@@ -136,7 +156,7 @@ a.decoration {
   color: #fff;
 }
 
-#myVideo {
+#my-video {
   position: fixed;
   right: 0;
   bottom: 0;
