@@ -10,7 +10,7 @@ body {
 .body-wrap {
   color: #fff;
   font-family: "SF Pro Display";
-  padding-top: 30px;
+  padding: 10px 20px 30px;
 }
 
 div.card-box {
@@ -104,6 +104,7 @@ a.decoration {
 
 .main-forecast-info {
   padding-top: 18px;
+  padding-left: 20px;
 }
 
 .weather-forecast {
