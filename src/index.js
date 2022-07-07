@@ -8,24 +8,45 @@ function formatDate() {
     "Friday",
     "Saturday",
   ];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
   let now = new Date();
-  let day = days[now.getDay()];
   let hour = now.getHours();
   let minutes = now.getMinutes();
-
+  let day = days[now.getDay()];
+  let date = now.getDate();
+  let month = months[now.getMonth()];
   if (hour < 10) {
     hour = `0${hour}`;
   }
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  return `${day} ${hour}:${minutes}`;
+  return `As of ${hour}:${minutes} ${day} ${date} of ${month}`;
 }
 
 function formatForecastDate(timestamp) {
   let forecastDate = new Date(timestamp * 1000);
   let date = forecastDate.getDate();
   return date;
+}
+
+function formatTime(timestamp) {
+  let forecastTime = new Date(timestamp * 1000);
+  let hours = forecastTime.getHours();
+  return `${hours}:00`;
 }
 
 function formatForecastMonth(timestamp) {
@@ -56,15 +77,15 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-  let forecast = response.data.daily;
-  let forecastElement = document.querySelector("#forecast");
+  let dailyForecast = response.data.daily;
+  let dailyForecastElement = document.querySelector("#dailyForecast");
 
-  let forecastHTML = `
+  let dailyForecastHTML = `
         <div class="row">`;
-  forecast.forEach(function (forecastDay, index) {
+  dailyForecast.forEach(function (forecastDay, index) {
     if (index < 6) {
-      forecastHTML =
-        forecastHTML +
+      dailyForecastHTML =
+        dailyForecastHTML +
         `
           <div class="col-2">
             <div class="weather-forecast-day">${formatDay(forecastDay.dt)}</div>
@@ -86,8 +107,41 @@ function displayForecast(response) {
         `;
     }
   });
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
+  dailyForecastHTML = dailyForecastHTML + `</div>`;
+  dailyForecastElement.innerHTML = dailyForecastHTML;
+}
+
+function displayHourlyForecast(response) {
+  console.log(response.data.hourly);
+
+  let hourlyForecast = response.data.hourly;
+  let hourlyForecastElement = document.querySelector("#hourlyForecast");
+
+  let hourlyForecastHTML = `
+        <div class="row">`;
+  hourlyForecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      hourlyForecastHTML =
+        hourlyForecastHTML +
+        `
+          <div class="col-2">
+            <div class="weather-forecast-time">${formatTime(
+              forecastDay.dt
+            )}</div>
+            <img src="http://openweathermap.org/img/wn/${
+              forecastDay.weather[0].icon
+            }@2x.png" alt="" class="forecast-icon">
+            <div class="weather-forecast-temp">
+              <span class="weather-forecast-temp-max">
+                ${Math.round(forecastDay.temp)}°
+              </span>
+            </div>
+          </div>
+        `;
+    }
+  });
+  hourlyForecastHTML = hourlyForecastHTML + `</div>`;
+  hourlyForecastElement.innerHTML = hourlyForecastHTML;
 }
 
 function getForecast(coordinates) {
@@ -95,6 +149,13 @@ function getForecast(coordinates) {
   let apiKey = "8ff5d1a1376b46b7fe89092d7988204d";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
+}
+
+function getHourlyForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "8ff5d1a1376b46b7fe89092d7988204d";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayHourlyForecast);
 }
 
 function displayTemperature(response) {
@@ -124,6 +185,8 @@ function displayTemperature(response) {
   changeVideo(response.data.weather[0].main);
 
   getForecast(response.data.coord);
+
+  getHourlyForecast(response.data.coord);
 }
 
 function search(city) {
@@ -209,4 +272,4 @@ function locateGadget() {
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", locateGadget);
 
-search("Kyiv");
+search("Boston");

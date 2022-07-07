@@ -2,21 +2,16 @@ html,
 body {
   height: 100%;
 }
+
 .background-body {
   background: linear-gradient(to top, #3b41c5 0%, #a981bb 49%, #ffc8a9 100%);
 }
 
 .body-wrap {
-  font-family: "SF Pro Display";
-  padding-top: 100px;
-  padding-bottom: 60px;
   color: #fff;
-}
-.search-tab {
-  background-color: none;
-  border-radius: 20px;
-  max-width: 800px;
-  margin: 16px auto;
+  font-family: "SF Pro Display";
+  padding-top: 30px;
+  padding-bottom: 60px;
 }
 
 div.card-box {
@@ -39,11 +34,9 @@ div.card-box {
 h1.main-city {
   font-weight: 800;
   font-size: 42px;
-  flex: none;
-  padding-top: 24px;
-  order: 0;
-  flex-grow: 0;
   margin-bottom: 0;
+  order: 0;
+  padding-top: 24px;
 }
 
 h2.current-temp {
@@ -52,35 +45,40 @@ h2.current-temp {
   line-height: 1;
 }
 
+h3.daily,
+h3.hourly {
+  border-bottom: 2px solid #fff;
+  display: block;
+  font-style: oblique;
+  padding-bottom: 8px;
+}
+
+h3.hourly {
+  padding-top: 32px;
+}
+
 a.decoration {
   text-decoration: none;
+}
+
+.search-tab {
+  background-color: none;
+  border-radius: 20px;
+  max-width: 800px;
+  margin: 16px auto;
+}
+
+.main-description {
+  text-align: center;
 }
 
 .description::first-letter {
   text-transform: capitalize;
 }
 
-.main-date {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-
 .main-icon {
   width: 120px;
   height: 120px;
-}
-
-.main-temp {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  padding-top: 20px;
-}
-
-.main-forecast-info {
-  padding-top: 42px;
 }
 
 .units {
@@ -98,26 +96,20 @@ a.decoration {
   text-decoration: none;
 }
 
-.city {
+.main-temp {
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 20px;
 }
 
-.forecast-info {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.hourly-btn {
-  align-self: flex-end;
-  width: 74px;
-  height: 38px;
+.main-forecast-info {
+  padding-top: 18px;
 }
 
 .weather-forecast {
   margin-top: 20px;
   text-align: center;
-  color: #fff;
 }
 
 .weather-forecast-day {
@@ -137,23 +129,20 @@ a.decoration {
   opacity: 0.5;
 }
 
-.bottom-card {
-  height: 80px;
-  width: 10px;
-}
-
 .footer {
-  text-align: center;
+  color: #fff;
   font-size: 18px;
   font-style: oblique;
   font-weight: lighter;
-  color: #fff;
-  padding-top: 24px;
+  text-align: center;
+  padding-top: 32px;
 }
 
 .github-link {
   position: relative;
   color: #fff;
+  padding: 0;
+  margin: 0;
 }
 
 #my-video {

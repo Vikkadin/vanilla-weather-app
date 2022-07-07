@@ -43,14 +43,9 @@
       </form>
 
       <div class="row">
-        <div class="col-4">
-          <ul class="main-date">
-            <li class="current-date" id="date"></li>
-            <li>
-              <img src="" alt="weather-description-icon" class="main-icon" id="icon">
-            </li>
-            <li class="description" id="weather-description"></li>
-          </ul>
+        <div class="col-4 main-description">
+          <div class="description" id="weather-description"></div>
+          <img src="" alt="weather-description-icon" class="main-icon" id="icon">
         </div>
 
         <div class="col-3 main-temp">
@@ -61,31 +56,39 @@
 
         <div class="col-5 forecast-info">
           <div class="main-forecast-info">
+            <div class="current-date" id="date"></div>
             <div>Pressure: <span id="pressure"></span> hPa</div>
             <div>Humidity: <span id="humidity"></span> %</div>
             <div>Wind: <span id="wind"></span> m/sec</div>
           </div>
-          <button type="submit" class="btn btn-outline-light hourly-btn" id="btn">Hourly</button>
         </div>
-
       </div>
+
       <div class="row">
         <div class="col-12">
-          <div class="weather-forecast" id="forecast">
+          <h3 class="daily">Daily Forecast</h3>
+          <div class="weather-forecast" id="dailyForecast">
           </div>
         </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <h3 class="hourly">Today Hourly Forecast</h3>
+          <div class="weather-forecast" id="hourlyForecast">
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <a href="https://github.com/Vikkadin/vanilla-weather-app" class="github-link" target="_blank">Open-source
+          code</a>
+        by Vika Kelii
       </div>
     </div>
 
   </div>
-
-
-
-  <div class="card-box bottom-card">
-    <div class="footer">
-      <a href="https://github.com/Vikkadin/vanilla-weather-app" class="github-link">Open-source code</a> by Vika Kelii
-    </div>
-    <script src="src/index.js"></script>
+  <script src="src/index.js"></script>
 </body>
 
 </html>
